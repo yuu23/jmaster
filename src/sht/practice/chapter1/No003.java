@@ -16,19 +16,18 @@ public class No003 extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			request.setCharacterEncoding("UTF-8");
-			String name = request.getParameter("name");
-
-			int value = Integer.parseInt(name);
 
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 
-			value *= 100;
+			String num1 = request.getParameter("value");
+
+			int i1 = Integer.parseInt(num1);
+			int answer = i1 * 100;
 
 
-			out.println("<html><head><title>YourName</title></head><body>");
-			out.println(value);
-			out.println("</body><html>");
+			out.println("<html><head><title>No003</title></head><body>");
+			out.println(answer);
+			out.println("</body></html>");
 	}
 }

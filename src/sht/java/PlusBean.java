@@ -34,7 +34,7 @@ public class PlusBean implements Serializable {
 
 	}
 
-	public PlusBean(int vaue1,int value2,int answer) {
+	public PlusBean(int value1,int value2,int answer) {
 		this.value1 = value1;
 		this.value2 = value2;
 		this.answer = answer;

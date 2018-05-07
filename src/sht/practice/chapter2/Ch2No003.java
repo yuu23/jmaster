@@ -1,4 +1,4 @@
-package sht.servlet;
+package sht.practice.chapter2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/Ch2No003")
+public class Ch2No003 extends HttpServlet {
 	// データベースの代わりにこのユーザー名とパスワードを正しいとする
-	private static final String USER="jack";
-	private static final String PASS="abc";
+	private static final String USER="user";
+	private static final String PASS="pass";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -42,22 +42,6 @@ public class LoginServlet extends HttpServlet {
 				out.println("<html><head><title>ShowCart</title></head><body>");
 				out.println("<h1>ユーザー名またはパスワードが違います</h1>");
 			}
-		} else if(action.equals("logout")){ // ログアウト時
-			// すでに作成されているセッション領域を取得。新しくは作成しない
-			HttpSession session = request.getSession(false);
-			if(session != null) {
-				// セッション領域を無効
-				session.invalidate();
-				out.println("<html><head><title>ShowCart</title></head><body>");
-				out.println("<h1>ログアウトしました</h1>");
-			}
 		}
-		out.println("<a href='/jmaster/selectProduct.html'>戻る</a>");
-		out.println("</body></html>");
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
 	}
 }

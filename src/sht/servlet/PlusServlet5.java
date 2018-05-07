@@ -30,7 +30,7 @@ public class PlusServlet5 extends HttpServlet {
 		PlusBean bean = new PlusBean(i1,i2,answer);
 		// リクエストスコープに必要なデータを入れる
 		request.setAttribute("plus", bean);
-		
+
 		// リクエストをAnswerServlet2に転送する
 		RequestDispatcher rd = request.getRequestDispatcher("/AnswerServlet2");
 		rd.forward(request, response);
