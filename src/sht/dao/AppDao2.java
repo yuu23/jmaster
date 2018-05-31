@@ -32,6 +32,7 @@ public class AppDao2 {
 				list.add(name);
 				list.add(pw);
 			}
+			return list;
 		}catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}catch (SQLException e) {
